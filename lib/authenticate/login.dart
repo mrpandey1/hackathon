@@ -222,9 +222,10 @@ class _LoginState extends State<Login> {
                 radius: 40,
                 backgroundColor: Colors.pink.shade600,
                 child: Image(
-                  image: NetworkImage(
-                      'https://www.logolynx.com/images/logolynx/15/1588b3eef9f1607d259c3f334b85ffd1.png'),
-                ),
+                  image: AssetImage(
+                    'assets/authenticate.png'
+                  )
+              )
               )
             ],
           ),

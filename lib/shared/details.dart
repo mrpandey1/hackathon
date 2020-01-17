@@ -1,12 +1,9 @@
-import 'dart:wasm';
-
 import 'package:flutter/material.dart';
 import 'package:nishant/firebase/food_api.dart';
 import 'package:nishant/firebase/food_notifier.dart';
 import 'package:nishant/services/authentication.dart';
 import 'package:nishant/shared/header.dart';
 import 'package:provider/provider.dart';
-
 class Details extends StatefulWidget {
   final String title;
   final int ind;

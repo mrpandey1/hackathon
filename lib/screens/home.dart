@@ -68,13 +68,14 @@ class _HomeState extends State<Home> {
     return StreamProvider<List<Details>>.value(
       value: DatabaseServices().details,
       child: Scaffold(
+
         body: PageView(
           children: <Widget>[
             Timeline(),
             Ngos(),
-            anonymous ? Anonymous() : Upload(),
-            NearbyPlacesScreen(),
-            EditProfile(),
+            anonymous ? Anonymous(value: 'upload blogs',) : Upload(),
+             NearbyPlacesScreen(),
+            anonymous?Anonymous(value: 'see your profile',):EditProfile(),
           ],
           controller: pageController,
           onPageChanged: onPageChange,

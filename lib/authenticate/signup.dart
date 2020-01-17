@@ -33,7 +33,7 @@ bool password2Valid=true;
                   ),
                 ),
         child:BackdropFilter(
-          filter: ImageFilter.blur(sigmaX:5.0, sigmaY:5.0),
+          filter: ImageFilter.blur(sigmaX:0.0, sigmaY:0.0),
            child: new Container(
                 decoration: new BoxDecoration(color: Colors.white.withOpacity(0.0)),
               ),
@@ -50,11 +50,11 @@ bool password2Valid=true;
     );
   }
   
-Container _signupForm(BuildContext context,toggleView){
+SingleChildScrollView _signupForm(BuildContext context,toggleView){
   String email;
   String password;
   String name;
-return Container(
+return SingleChildScrollView(
   padding: EdgeInsets.all(20),
   child: Stack(
     children: <Widget>[

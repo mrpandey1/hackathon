@@ -211,19 +211,21 @@ databaseReference.collection("posts").document(currentUser.uid).collection("user
   }
 
   Future<void> loadAssets() async {
-    String error;
-    try {
-      resultList = await MultiImagePicker.pickImages(
-        maxImages: 5,
-      );
-    }catch (e) {
-      error = "this is error";
-    }
-    if (!mounted) return;
+    resultList=await MultiImagePicker.pickImages(
+      maxImages: 4,
+    );
+    // String error;
+    // try {
+    //   resultList = await MultiImagePicker.pickImages(
+    //     maxImages: 5,
+    //   );
+    // }catch (e) {
+    //   error = "this is error";
+    // }
+     if (!mounted) return;
     setState(() {
-      images = resultList;
+      images =resultList;
       resultList=resultList;
-      if (error == null) _error = 'No Error Dectected';
     });
   }
   
@@ -457,7 +459,7 @@ databaseReference.collection("posts").document(currentUser.uid).collection("user
                 SizedBox(height: 20,),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
+                  child: resultList==null?SizedBox(width: 20,):Container(
                     height: 300,
                     child: buildGridView(),
                   ),

@@ -35,7 +35,7 @@ class _TimelineState extends State<Timeline> {
         child:ListView.builder(
                 itemCount: foodNotifier.foodList.length,
                 itemBuilder: (context,index){    
-                  var image; 
+                  var image;
                   foodNotifier.foodList[index].image.map(
                     (images){
                       image=images;
@@ -53,7 +53,10 @@ class _TimelineState extends State<Timeline> {
                 child: GestureDetector(
                   onTap:()=> Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => Details(title: foodNotifier.foodList[index].title,ind:index,images:image,
+                                  MaterialPageRoute(builder: (context) => Details(
+                                  title: foodNotifier.foodList[index].title,
+                                  ind:index,
+                                  images:image,
                                   description: foodNotifier.foodList[index].description,
                                   location: foodNotifier.foodList[index].location,
                                   name:foodNotifier.foodList[index].name,
